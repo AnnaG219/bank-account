@@ -27,22 +27,19 @@ BankUser.prototype.depositFunds = function() {
 }
 
 // User Interface Logic
+var account = new BankAccount
 
 $(document).ready(function(){
   $("form#account").submit(function(event) {
     event.preventDefault();
-    var firstName = $("input#first-name").val();
-    var lastName = $("input#last-name").val();
-    var initialDeposit = $("input#initial-deposit").val();
-    console.log(firstName, lastName, initialDeposit)
-
-
-  })
-  $("form#transactions").submit(function(event) {
-    event.preventDefault();
+    var inputtedfirstName = $("input#first-name").val();
+    var inputtedlastName = $("input#last-name").val();
+    var inputtedinitialDeposit = $("input#initial-deposit").val();
     var withdraw = $("input#withdraw").val();
     var deposit = $("input#deposit").val();
-    console.log(withdraw, deposit)
+    var newUser = new BankUser(inputtedfirstName, inputtedlastName, inputtedinitialDeposit, withdraw, deposit)
 
-  })
-})
+    console.log(newUser)
+
+  });
+});
