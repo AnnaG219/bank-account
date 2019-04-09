@@ -29,17 +29,29 @@ BankUser.prototype.depositFunds = function() {
 // User Interface Logic
 var account = new BankAccount
 
-$(document).ready(function(){
+
+
+$(document).ready(function() {
   $("form#account").submit(function(event) {
     event.preventDefault();
-    var inputtedfirstName = $("input#first-name").val();
-    var inputtedlastName = $("input#last-name").val();
-    var inputtedinitialDeposit = $("input#initial-deposit").val();
-    var withdraw = $("input#withdraw").val();
-    var deposit = $("input#deposit").val();
-    var newUser = new BankUser(inputtedfirstName, inputtedlastName, inputtedinitialDeposit, withdraw, deposit)
+    var firstName = $("input#first-name").val();
+    var lastName = $("input#last-name").val();
+    var initialDeposit = parseFloat($("input#initial-deposit").val()).toFixed(2);
+    var withdraw =  parseFloat($("input#withdraw").val()).toFixed(2);
+    var deposit = parseFloat($("input#deposit").val()).toFixed(2);
+    var newUser = new BankUser(firstName, lastName, initialDeposit, withdraw, deposit)
+    var fullName = newUser.fullName();
+    if (withdraw === NaN) {
+      withdraw === 0
+    }
+    var withdrawFunds= initialDeposit-withdraw
+    var currentBalance = parseFloat(withdrawFunds).toFixed(2)+deposit
 
-    console.log(newUser)
+
+    console.log(initialDeposit)
+    console.log(withdraw)
+    console.log(deposit)
+    console.log(currentBalance)
 
   });
 });
