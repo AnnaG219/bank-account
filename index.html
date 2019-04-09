@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+   <script src ="js/jquery-3.3.1.js"></script>
+   <script src ="js/scripts.js"></script>
+   <link href ="css/bootstrap.css" rel="stylesheet">
+   <link href ="css/styles.css" rel="stylesheet">
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <h2>Bank Account</h2>
+    <div class="container">
+      <form id="account">
+        <div class="row">
+          <div class="col">
+            <label for="first-name">First Name:</label>
+            <input type="text" class="form-control" id="first-name" placeholder="first">
+          </div>
+          <div class="col">
+            <label for="last-name">Last Name:</label>
+            <input type="text" class="form-control" id= "last-name" placeholder="last">
+          </div>
+          <div class="col">
+            <label for="initial-deposit">Initial Deposit:</label>
+            <input type="number" class="form-control" id="initial-deposit" placeholder="initial deposit">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Create Account</button>
+      </form>
+      <form id="transactions">
+        <div class="col">
+          <label for="deposit">Deposit Funds:</label>
+          <input type="number" class="form-control" id="deposit" placeholder="Deposit">
+        </div>
+        <div class="col">
+          <label for="withdraw">Withdraw Funds:</label>
+          <input type="number" class="form-control" id="withdraw" placeholder="Withdraw">
+        </div>
+        <div class="display">
+
+        </div>
+        <button type="submit" class="btn btn-danger">Check Balance</button>
+      </form>
+    </div>
+  </body>
+</html>
